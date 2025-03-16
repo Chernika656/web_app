@@ -11,26 +11,25 @@ document.getElementById('saveData').addEventListener('click', function() {
         savings: document.getElementById('savings')
     };
 
-    let isValid = true; // Flag to track if all fields are valid
+    let isValid = true;
 
-    // Validation function
     function validateField(field) {
         const value = field.value;
         if (isNaN(value) || parseFloat(value) < 0) {
-            field.classList.add('error'); // Add error class to the input
+            field.classList.remove('valid'); // Remove valid class
+            field.classList.add('error');
             isValid = false;
         } else {
-            field.classList.remove('error'); // Remove error class if valid
+            field.classList.remove('error'); // Remove error class
+            field.classList.add('valid'); // Add valid class
         }
     }
 
-    // Validate all fields
     for (const key in formData) {
         validateField(formData[key]);
     }
 
     if (isValid) {
-        // If all fields are valid, then collect data
         const data = {};
         for (const key in formData) {
             data[key] = formData[key].value;
