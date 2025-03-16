@@ -1,93 +1,162 @@
 body {
-    font-family: 'Roboto', sans-serif; /* Современный шрифт */
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to right, #6a11cb, #2575fc); /* Градиентный фон */
+    background: linear-gradient(to right, #6a11cb, #2575fc);
     margin: 0;
-    color: #fff; /* Общий цвет текста */
+    color: #fff;
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
-    padding: 40px; /* Увеличен отступ */
-    border-radius: 15px; /* Более закругленные углы */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Усиленная тень */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     text-align: left;
     width: 500px;
+    animation: fadeIn 1s ease-in-out; /* Анимация появления контейнера */
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 h1 {
     text-align: center;
-    margin-bottom: 30px; /* Увеличен отступ */
-    color: #333; /* Возвращен цвет заголовка */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Тень для заголовка */
+    margin-bottom: 30px;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+
 .form-group {
-    margin-bottom: 20px; /* Увеличен отступ */
+    margin-bottom: 20px;
+    opacity: 0; /* Изначально скрываем элементы формы */
+    animation: slideIn 0.5s ease-in-out forwards; /* Анимация появления */
+}
+
+.form-group:nth-child(1) {
+    animation-delay: 0.1s; /* Задержка для первого элемента */
+}
+
+.form-group:nth-child(2) {
+    animation-delay: 0.2s; /* Задержка для второго элемента */
+}
+
+.form-group:nth-child(3) {
+    animation-delay: 0.3s; /* Задержка для третьего элемента */
+}
+
+.form-group:nth-child(4) {
+    animation-delay: 0.4s; /* Задержка для четвертого элемента */
+}
+
+.form-group:nth-child(5) {
+    animation-delay: 0.5s; /* Задержка для пятого элемента */
+}
+
+.form-group:nth-child(6) {
+    animation-delay: 0.6s; /* Задержка для шестого элемента */
+}
+.form-group:nth-child(7) {
+    animation-delay: 0.7s; /* Задержка для седьмого элемента */
+}
+.form-group:nth-child(8) {
+    animation-delay: 0.8s; /* Задержка для восьмого элемента */
+}
+.form-group:nth-child(9) {
+    animation-delay: 0.9s; /* Задержка для девятого элемента */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 label {
     display: block;
-    margin-bottom: 8px; /* Увеличен отступ */
-    font-weight: 500; /* Менее жирный шрифт */
-    color: #555; /* Возвращен цвет label */
-    transition: color 0.3s ease-in-out; /* Анимация цвета */
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+    transition: color 0.3s ease-in-out;
 }
 
 label:hover {
-    color: #333; /* Изменение цвета при наведении */
+    color: #333;
 }
 
 input[type="number"],
 input[type="text"] {
     width: 100%;
-    padding: 12px; /* Увеличен размер поля */
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 8px; /* Более закругленные углы */
+    border-radius: 8px;
     box-sizing: border-box;
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Анимация при наведении */
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 input[type="number"]:focus,
 input[type="text"]:focus {
     border-color: #007cfa; /* Изменение цвета при фокусе */
     box-shadow: 0 0 5px rgb(0, 86, 252); /* Тень при фокусе */
-    outline: none; /* Убираем стандартную обводку при фокусе */
+    outline: none;
 }
 
 button {
-    background: linear-gradient(to right, #4CAF50, #388E3C); /* Градиент для кнопки */
+    background: linear-gradient(to right, #4CAF50, #388E3C);
     color: white;
-    padding: 14px 25px; /* Увеличен размер кнопки */
+    padding: 14px 25px;
     border: none;
-    border-radius: 8px; /* Более закругленные углы */
+    border-radius: 8px;
     cursor: pointer;
     width: 100%;
-    font-size: 18px; /* Увеличен размер текста */
-    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out; /* Анимация при наведении */
+    font-size: 18px;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    opacity: 0;
+    animation: slideIn 0.5s ease-in-out forwards;
+    animation-delay: 1s; /* Задержка для кнопки */
 }
 
 button:hover {
-    background: linear-gradient(to right, #388E3C, #4CAF50); /* Обратный градиент при наведении */
-    transform: translateY(-2px); /* Небольшое поднятие при наведении */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Усиленная тень при наведении */
+    background: linear-gradient(to right, #388E3C, #4CAF50);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #dataMessage {
-    margin-top: 20px; /* Увеличен отступ */
+    margin-top: 20px;
     text-align: center;
-    color: #333; /* Возвращен цвет dataMessage */
-    font-size: 18px; /* Увеличен размер текста */
-    color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный */
+    color: #333;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.7);
 }
 
 /* Style for error input */
 input[type="number"].error,
 input[type="text"].error {
-    border-color: #f44336; /* Red border color */
-    box-shadow: 0 0 5px rgba(244, 67, 54, 0.5); /* Red shadow */
+    border-color: #f44336;
+    box-shadow: 0 0 5px rgba(244, 67, 54, 0.5);
 }
+
+/* Style for valid input */
+input[type="number"].valid,
+input[type="text"].valid {
+    border-color: #4CAF50; /* Green border color */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Green shadow */
+}
+
