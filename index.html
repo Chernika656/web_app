@@ -1,10 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ввод доходов</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Введите ваш доход</h1>
+        <form id="incomeForm">
+            <label for="income">Доходы (руб.):</label>
+            <input type="number" id="income" name="income" min="0">
+            <button type="button" onclick="submitIncome()">Отправить</button>
+        </form>
+        <p id="incomeMessage"></p> </div>
 
+    <script>
+        function submitIncome() {
+            const income = document.getElementById("income").value;
+            if (income >= 0) {
+              document.getElementById("incomeMessage").textContent = "Ваш доход: " + income + " руб.";
+            } else {
+              document.getElementById("incomeMessage").textContent = "Пожалуйста, введите положительное число.";
+            }
+        }
+    </script>
 </body>
 </html>
